@@ -7,3 +7,29 @@
 	width: 100%;
 	height: 100%;
 }
+.search {
+	width: 80%;
+	height: 80rpx;
+	/* background-color: #c2020c; */
+	display: flex;
+	line-height: 80rpx;
+	margin: 10rpx auto 0;
+}
+.search-box {
+	flex: 8;
+	padding-left: 20rpx;
+	vertical-align: middle;
+	border: 2rpx solid #c2020c;
+	border-radius: 40rpx 0 0 40rpx;
+}
+.search-box input {
+	height: 100%;
+}
+.search-btn {
+	/* width: 100rpx; */
+	flex: 2;
+	justify-content: end;
+	text-align: center;
+	background-color: #c2020c;
+	border-radius: 0 40rpx 40rpx 0;
+}

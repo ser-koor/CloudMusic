@@ -24,4 +24,8 @@
 	</block>
  </swiper>
 
-
+ <!-- 搜索框 -->
+ <view class="search">
+	<view class="search-box"><input type="text"/></view>
+	<view class="search-btn">搜索</view>
+ </view>

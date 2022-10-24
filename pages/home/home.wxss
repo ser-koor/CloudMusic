@@ -1,1 +1,9 @@
 /* pages/home/home.wxss */
+.swiperContainer {
+	width: 100%;
+	height: 350rpx;
+}
+.swiperContainer image {
+	width: 100%;
+	height: 100%;
+}

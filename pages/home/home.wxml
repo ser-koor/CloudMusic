@@ -1,2 +1,27 @@
 <!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<!-- 轮播图：使用滑块视图容器  swiper
+  1. 一个swiper中可以有多个siwper-item
+  indicator-dots:显示面板指示点
+  indicator-color:指示点颜色
+  indicator-active-color:选中指示点颜色
+  autoplay:是否自动切换
+  interval:自动切换时间间隔,单位是毫秒
+  circular:是否采用衔接滑动
+ -->
+ <swiper 
+ 		class="swiperContainer"
+ 		indicator-dots="true"
+		indicator-active-color="red"
+		indicator-color="#666"
+		autoplay="true"
+		interval="2000"
+		circular="true"
+		 >
+	<block wx:for="{{imgs}}" wx:key="*this">
+		<swiper-item>
+			<image src="{{item}}"></image>
+		</swiper-item>
+	</block>
+ </swiper>
+
+

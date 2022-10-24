@@ -5,7 +5,13 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        imgs: [
+            'http://p1.music.126.net/AF05UXU-hZh_NTOAD4dpLQ==/109951167994680442.jpg?imageView&quality=89',
+            'http://p1.music.126.net/yrabyD2i6kU9Thf2Z9ZWdg==/109951167994689890.jpg?imageView&quality=89',
+            'http://p1.music.126.net/GDZ4cxHoL-aJ8vTn5vENSQ==/109951167994803636.jpg?imageView&quality=89',
+            'http://p1.music.126.net/Mm5NVNlDETNBEw7lInbadw==/109951167994708146.jpg?imageView&quality=89',
+            'http://p1.music.126.net/jCdDMJrANePEUXtYrg116A==/109951167994726946.jpg?imageView&quality=89'
+          ]
     },
 
     /**

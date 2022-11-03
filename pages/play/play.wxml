@@ -1,0 +1,57 @@
+<!--pages/play/play.wxml-->
+<view class="playContainer">
+	<image class="bg" src="{{song.album.picUrl}}"></image>
+	<view class="title">{{song.name}}</view>
+	<!-- 中间区域 -->
+	<view class="middle">
+		<view class="middle-content" bind:tap="isShow" >
+			<view wx:if="{{switch}}" class="image-view">
+				<image src="{{song.album.picUrl}}"
+					   style="animation-play-state: {{play ? 'running' : 'paused'}};">
+				</image>
+			</view>
+			<scroll-view wx:else scroll-with-animation="true" class="lyric-view" scroll-y="true" scroll-top="{{marginTop}}">
+				<view class="lyric-content">
+					<block wx:for="{{lyricContent}}" wx:for-item="lyric" wx:key="index">
+						<text class="{{currentIndex === index ? 'lyric' : ''}}">{{lyric[1]}}</text>
+					</block>
+				</view>
+			</scroll-view>
+		</view>
+	</view>
+	<!-- <swiper class="middle">
+		<swiper-item class="song-left">
+			<view class="image-view">
+				<image src="{{song.album.picUrl}}"></image>
+			</view>
+		</swiper-item>
+		<swiper-item class="song-right">
+			<scroll-view scroll-with-animation="true" class="lyric-view" scroll-y="true" scroll-top="{{marginTop}}">
+				<view class="lyric-content">
+					<block wx:for="{{lyricContent}}" wx:for-item="lyric" wx:key="index">
+						<text class="{{currentIndex === index ? 'lyric' : ''}}">{{lyric[1]}}</text>
+					</block>
+				</view>
+			</scroll-view>
+		</swiper-item>
+	</swiper> -->
+	<!-- 进度条 -->
+	<view class="progress">
+		<view class="play-time">{{playTime}}</view>
+		<slider bindchange="dragSlider" class="dragSlider" value="{{move}}" max="{{max}}" block-size="16" activeColor="#f00"></slider>
+		<view class="end-time">{{endTime}}</view>
+	</view>
+	<!-- 底部 -->
+	<view class="footer">
+		<image class="paly-left" src="/assets/images/prev.png"></image>
+		<image class="play" 
+			   src="/assets/images/{{play ? 'pause' : 'play'}}.png" 
+			   capture-bind:tap="pauseClick"></image>
+		<image class="play-right" src="/assets/images/next.png"></image>
+	</view>
+</view>
+
+<!-- 引入音频标签 -->
+<!-- <audio id="myAudio"  src="{{src}}"></audio> -->
+
+

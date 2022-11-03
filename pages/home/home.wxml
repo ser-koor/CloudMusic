@@ -1,5 +1,5 @@
-<!--pages/home/home.wxml-->
-<!-- 轮播图：使用滑块视图容器  swiper
+ <view id="home">
+ <!-- 轮播图：使用滑块视图容器  swiper
   1. 一个swiper中可以有多个siwper-item
   indicator-dots:显示面板指示点
   indicator-color:指示点颜色
@@ -8,7 +8,7 @@
   interval:自动切换时间间隔,单位是毫秒
   circular:是否采用衔接滑动
  -->
- <swiper 
+	<swiper 
  		class="swiperContainer"
  		indicator-dots="true"
 		indicator-active-color="red"
@@ -17,15 +17,39 @@
 		interval="2000"
 		circular="true"
 		 >
-	<block wx:for="{{imgs}}" wx:key="*this">
-		<swiper-item>
-			<image src="{{item}}"></image>
-		</swiper-item>
-	</block>
- </swiper>
+		<block wx:for="{{imgs}}" wx:key="*this">
+			<swiper-item>
+				<image src="{{item}}"></image>
+			</swiper-item>
+		</block>
+	</swiper>
 
- <!-- 搜索框 -->
- <view class="search">
-	<view class="search-box"><input type="text"/></view>
-	<view class="search-btn">搜索</view>
+	<!-- 搜索框 -->
+	<view class="search">
+		<view class="search-box"><input bind:blur="getKeyWord" type="text" placeholder="{{placeholder}}"/></view>
+		<view class="search-btn" capture-bind:tap="doSearch">搜索</view>
+	</view>
+
+	<!-- 音乐列表 -->
+	<view class="music">
+		<block wx:for="{{musicList[0].id ? musicList : popMusic}}" wx:key="*this">
+			<view class="music-item">
+				<view class="music-left">
+					<image class="music-left-img" src="{{item.image}}"></image>
+				</view>
+				<view class="music-content">
+					<view class="music-name">{{item.musicName}}</view>
+					<view class="music-info">{{item.musicInfo}} -《{{item.musicName}}》</view>
+				</view>
+				<view class="music-right">
+					<image 
+					class="play" 
+					src="/assets/images/more.png" 
+					data-item="{{item}}"
+					bind:tap="toPlay"></image>
+				</view>
+			</view>
+		</block>
+	</view>
  </view>
+ 

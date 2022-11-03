@@ -1,4 +1,11 @@
 /* pages/home/home.wxss */
+#home {
+	min-height: 100vh;
+	color: #fff;
+	background: -webkit-linear-gradient(top ,#c20c0c,#da5f43,rgb(252, 105, 105));
+}
+
+/* 轮播图 */
 .swiperContainer {
 	width: 100%;
 	height: 350rpx;
@@ -7,6 +14,7 @@
 	width: 100%;
 	height: 100%;
 }
+/* 搜素框 */
 .search {
 	width: 80%;
 	height: 80rpx;
@@ -20,10 +28,12 @@
 	padding-left: 20rpx;
 	vertical-align: middle;
 	border: 2rpx solid #c2020c;
+	background-color: rgba(0, 0, 0, 0.2);
 	border-radius: 40rpx 0 0 40rpx;
 }
 .search-box input {
 	height: 100%;
+	color: #000;
 }
 .search-btn {
 	/* width: 100rpx; */
@@ -32,4 +42,50 @@
 	text-align: center;
 	background-color: #c2020c;
 	border-radius: 0 40rpx 40rpx 0;
+}
+
+/* music-list */
+.music {
+	margin-top: 10rpx;
+	width: 100%;
+	/* background-color: rgba(194, 2, 12, 0.7); */
+	/* background-color: rgba(253, 153, 130, 0.9); */
+	box-shadow: 0 1rpx 0 0 rgba(0,0,0,0.2) inset;
+}
+.music-item {
+	height: 120rpx;
+	width: 100%;
+	/* background-color: pink; */
+	box-shadow: 0 1rpx 0 0 rgba(0,0,0,0.2);
+	display: flex;
+}
+.music-left {
+	width: 120rpx;
+	height: 100%;
+}
+.music-left .music-left-img {
+	width: 110rpx;
+	height: 110rpx;
+	margin: 5rpx;
+	border-radius: 10%;
+}
+.music-content {
+	flex: 1;
+	font-size: 35rpx;
+	padding: 16rpx 0rpx 16rpx 10rpx;
+	overflow: hidden;
+}
+.music-content .music-name {
+	font-size: 40rpx;
+	margin-bottom: 5rpx;
+}
+.music-content .music-info {
+	font-size: 28rpx;
+	font-style: italic;
+}
+.music-item .play {
+	width: 100rpx;
+	height: 100rpx;
+	margin-top: 10rpx;
+	margin-right: 10rpx;
 }
